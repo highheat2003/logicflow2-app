@@ -1,0 +1,27 @@
+{
+  "name": "logicflow2-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@logicflow/core": "^2.0.4",
+    "@logicflow/engine": "^0.1.1",
+    "@logicflow/extension": "^2.0.8",
+    "element-plus": "^2.8.3",
+    "vue": "^3.4.37",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.2",
+    "prettier": "^3.3.3",
+    "unplugin-auto-import": "^0.18.3",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.4.1"
+  }
+}
