@@ -46,7 +46,7 @@ h1 {
   padding-top: 0rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 @media (prefers-color-scheme: light) {

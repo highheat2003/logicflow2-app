@@ -1,0 +1,214 @@
+{
+  "nodes": [
+    {
+      "id": "Event_1d42u4p",
+      "type": "bpmn:startEvent",
+      "x": 280,
+      "y": 200,
+      "properties": {
+        "a": "efrwe",
+        "b": "wewe",
+        "name": "시작"
+      },
+      "text": {
+        "x": 280,
+        "y": 200,
+        "value": "시작"
+      }
+    },
+    {
+      "id": "Event_08p8i6q",
+      "type": "bpmn:endEvent",
+      "x": 920,
+      "y": 200,
+      "properties": {
+        "a": "efrwe",
+        "b": "wewe",
+        "name": "종료"
+      },
+      "text": {
+        "x": 920,
+        "y": 200,
+        "value": "종료"
+      }
+    },
+    {
+      "id": "Gateway_1fngqgj",
+      "type": "bpmn:exclusiveGateway",
+      "x": 580,
+      "y": 200,
+      "properties": {
+        "a": "efrwe",
+        "b": "wewe",
+        "name": "게이트웨이"
+      },
+      "text": {
+        "x": 580,
+        "y": 200,
+        "value": "게이트웨이"
+      }
+    },
+    {
+      "id": "Activity_2mgtaia",
+      "type": "bpmn:userTask",
+      "x": 420,
+      "y": 200,
+      "properties": {
+        "a": "efrwe",
+        "b": "wewe",
+        "name": "사용자"
+      },
+      "text": {
+        "x": 420,
+        "y": 200,
+        "value": "사용자"
+      }
+    },
+    {
+      "id": "Activity_1sp8qc8",
+      "type": "bpmn:serviceTask",
+      "x": 760,
+      "y": 200,
+      "properties": {
+        "a": "efrwe",
+        "b": "wewe",
+        "name": "서비스"
+      },
+      "text": {
+        "x": 760,
+        "y": 200,
+        "value": "서비스"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "Flow_33inf2k",
+      "type": "bpmn:sequenceFlow",
+      "sourceNodeId": "Event_1d42u4p",
+      "targetNodeId": "Activity_2mgtaia",
+      "startPoint": {
+        "x": 298,
+        "y": 200
+      },
+      "endPoint": {
+        "x": 370,
+        "y": 200
+      },
+      "properties": {
+        "name": "면"
+      },
+      "text": {
+        "x": 331,
+        "y": 200,
+        "value": "면"
+      },
+      "pointsList": [
+        {
+          "x": 298,
+          "y": 200
+        },
+        {
+          "x": 370,
+          "y": 200
+        }
+      ]
+    },
+    {
+      "id": "Flow_0pfouf0",
+      "type": "bpmn:sequenceFlow",
+      "sourceNodeId": "Activity_2mgtaia",
+      "targetNodeId": "Gateway_1fngqgj",
+      "startPoint": {
+        "x": 470,
+        "y": 200
+      },
+      "endPoint": {
+        "x": 555,
+        "y": 200
+      },
+      "properties": {
+        "name": "2면"
+      },
+      "text": {
+        "x": 507,
+        "y": 200,
+        "value": "2면"
+      },
+      "pointsList": [
+        {
+          "x": 470,
+          "y": 200
+        },
+        {
+          "x": 555,
+          "y": 200
+        }
+      ]
+    },
+    {
+      "id": "Flow_3918lhh",
+      "type": "bpmn:sequenceFlow",
+      "sourceNodeId": "Gateway_1fngqgj",
+      "targetNodeId": "Activity_1sp8qc8",
+      "startPoint": {
+        "x": 605,
+        "y": 200
+      },
+      "endPoint": {
+        "x": 710,
+        "y": 200
+      },
+      "properties": {
+        "name": "3면"
+      },
+      "text": {
+        "x": 664,
+        "y": 200,
+        "value": "3면"
+      },
+      "pointsList": [
+        {
+          "x": 605,
+          "y": 200
+        },
+        {
+          "x": 710,
+          "y": 200
+        }
+      ]
+    },
+    {
+      "id": "Flow_379e0o9",
+      "type": "bpmn:sequenceFlow",
+      "sourceNodeId": "Activity_1sp8qc8",
+      "targetNodeId": "Event_08p8i6q",
+      "startPoint": {
+        "x": 810,
+        "y": 200
+      },
+      "endPoint": {
+        "x": 902,
+        "y": 200
+      },
+      "properties": {
+        "name": "4면"
+      },
+      "text": {
+        "x": 871,
+        "y": 200,
+        "value": "4면"
+      },
+      "pointsList": [
+        {
+          "x": 810,
+          "y": 200
+        },
+        {
+          "x": 902,
+          "y": 200
+        }
+      ]
+    }
+  ]
+}
