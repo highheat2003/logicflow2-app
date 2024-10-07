@@ -31,7 +31,7 @@ export default function registerConnect(lf) {
         }
         super.initNodeData(data);
         const width = 300;
-        const height = 150;
+        const height = 220;
         this.width = width;
         this.height = height;
         this.anchorsOffset = [

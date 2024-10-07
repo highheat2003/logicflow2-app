@@ -3,10 +3,10 @@
     <p>{{ props.name }}</p>
     <p>안녕하세요, 보험이 필요한가요?</p>
     <div class="button-list">
-      <button @mousedown.stop="done(1)">보험에 가입되어 있습니다.</button>
-      <button @mousedown.stop="done(2)">필요업음</button>
-      <button @mousedown.stop="done(3)">필요</button>
-      <button @mousedown.stop="done(4)">비정상적</button>
+      <el-button @mousedown.stop="done(1)" class="block-button">보험에 가입되어 있습니다.</el-button>
+      <el-button @mousedown.stop="done(2)" class="block-button">필요업음</el-button>
+      <el-button @mousedown.stop="done(3)" class="block-button">필요</el-button>
+      <el-button @mousedown.stop="done(4)" class="block-button">비정상적</el-button>
     </div>
   </div>
 </template>
@@ -36,6 +36,12 @@ function done(type) {
 }
 .button-list {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
+}
+.block-button {
+  display: block; /* 버튼을 블록 요소로 설정 */
+  width: 100%; /* 필요에 따라 버튼의 너비를 조정 */
+  margin-bottom: 10px; /* 버튼 사이 간격 */
+  margin-left: 0px; /* 버튼 사이 간격 */
 }
 </style>

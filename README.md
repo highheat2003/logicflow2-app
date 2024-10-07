@@ -1,6 +1,6 @@
-# Vue 3 + Vite + Element-plus + LogicFlow
+# Vue 3 + Vite + Element-plus + LogicFlow + Konva
 
-vue3, logicflow, element-plus를 이용한 예제
+vue3, logicflow, element-plus, konva를 이용한 예제
 
 # LoginFlow
 
@@ -21,4 +21,16 @@ https://element-plus.org/en-US/
 
 <pre>
 yarn add element-plus
+yarn add @element-plus/icons-vue
+</pre>
+
+# Konva
+
+https://konvajs.org/
+
+설치 :
+
+<pre>
+yarn add konva
+yarn add vue-konva
 </pre>

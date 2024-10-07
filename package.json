@@ -14,8 +14,10 @@
     "@logicflow/engine": "^0.1.1",
     "@logicflow/extension": "^2.0.8",
     "element-plus": "^2.8.3",
+    "konva": "^9.3.15",
     "vue": "^3.4.37",
     "vue-json-pretty": "^2.4.0",
+    "vue-konva": "^3.1.2",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {

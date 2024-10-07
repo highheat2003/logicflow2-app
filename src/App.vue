@@ -35,7 +35,20 @@
         <el-menu-item index="3-4-3">item three</el-menu-item>
       </el-sub-menu>
     </el-sub-menu>
-    <el-menu-item index="4">Konva demo</el-menu-item>
+    <el-sub-menu index="4" :popper-offset="0">
+      <template #title>Konva demo</template>
+      <el-sub-menu index="4-0" :popper-offset="0">
+        <template #title>VueKonva</template>
+        <el-menu-item index="4-0-1" route="/Konva1">Konva1</el-menu-item>
+        <el-menu-item index="4-0-3" route="/Konva3">Konva3</el-menu-item>
+      </el-sub-menu>
+      <el-sub-menu index="4-1" :popper-offset="0">
+        <template #title>non-VueKonva</template>
+        <el-menu-item index="4-1-1" route="/Konva4">Konva4</el-menu-item>
+        <el-menu-item index="4-1-2" route="/Konva5">Konva5</el-menu-item>
+        <el-menu-item index="4-1-3" route="/Konva6">Konva6</el-menu-item>
+      </el-sub-menu>
+    </el-sub-menu>
     <el-menu-item index="5">Fabric.js demo</el-menu-item>
   </el-menu>
   <router-view />
