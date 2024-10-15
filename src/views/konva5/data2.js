@@ -1,11 +1,5 @@
 const data = {
-  attrs: {
-    width: 1303,
-    height: 937,
-    draggable: true,
-    x: 131,
-    y: 9,
-  },
+  attrs: { width: 1303, height: 937, draggable: true, x: 177, y: 115 },
   className: 'Stage',
   children: [
     {
@@ -13,18 +7,10 @@ const data = {
       className: 'Layer',
       children: [
         {
-          attrs: {
-            src: 'https://blog.kakaocdn.net/dn/WjTnf/btrKQhJM3Tn/AZXWBm8xomKUuCbwrmakFK/img.jpg',
-          },
+          attrs: { src: 'https://blog.kakaocdn.net/dn/WjTnf/btrKQhJM3Tn/AZXWBm8xomKUuCbwrmakFK/img.jpg' },
           className: 'Image',
         },
-        {
-          attrs: {
-            x: 513,
-            y: 84.3125,
-          },
-          className: 'Transformer',
-        },
+        { attrs: { x: 513, y: 84.3125 }, className: 'Transformer' },
         {
           attrs: {
             x: 381,
@@ -67,24 +53,11 @@ const data = {
       ],
     },
     {
-      attrs: {
-        visible: false,
-      },
+      attrs: { visible: false },
       className: 'Layer',
       children: [
-        {
-          attrs: {
-            src: '/RoomSketcher-House-Floor-Plans-2452430-800.jpg',
-          },
-          className: 'Image',
-        },
-        {
-          attrs: {
-            x: 714,
-            y: 136.3125,
-          },
-          className: 'Transformer',
-        },
+        { attrs: { src: '/RoomSketcher-House-Floor-Plans-2452430-800.jpg' }, className: 'Image' },
+        { attrs: { x: 714, y: 136.3125 }, className: 'Transformer' },
         {
           attrs: {
             x: 714,

@@ -1,14 +1,17 @@
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, watch, reactive } from 'vue';
 import Konva from 'konva';
 import data from './data';
 import * as util from '@/support/util';
 import { IdUtil } from '@/support/IdUtil';
+import PropertyDialog from './PropertyDialog.vue';
 
 const width = window.innerWidth;
 const height = window.innerHeight;
 
 let stage = null; // stage객체 참조용
+const propertyVisible = ref(false);
+const selectedNode = ref(null);
 const scale = ref(1);
 const plan = ref('0');
 const rectangles = ref([]);
@@ -129,6 +132,9 @@ onMounted(async () => {
   window.addEventListener('click', () => {
     // hide menu
     menuNode.style.display = 'none';
+
+    const deleteBtn = document.getElementById('delete-button');
+    if (deleteBtn) deleteBtn.style.display = 'initial';
   });
 
   layers[0].show();
@@ -136,18 +142,25 @@ onMounted(async () => {
   stage.on('mousedown', handleStageMouseDown);
   stage.on('contextmenu', (e) => {
     e.evt.preventDefault();
-    console.log('contextmenu===>', e.target);
-    if (e.target === stage || util.isEmpty(e.target.attrs.deviceType)) {
-      return;
-    }
-    //currentShape = e.target;
-    // show menu
+    const layer = getLayer();
+    console.log('contextmenu===>', e.target, getType(e.target));
+
     menuNode.style.display = 'initial';
     const containerRect = stage.container().getBoundingClientRect();
     menuNode.style.top = containerRect.top + stage.getPointerPosition().y + 4 + 'px';
     menuNode.style.left = containerRect.left + stage.getPointerPosition().x + 4 + 'px';
+    selectedNode.value = e.target;
+    if (e.target === stage || util.isEmpty(e.target.attrs.deviceType)) {
+      const deleteBtn = document.getElementById('delete-button');
+      if (deleteBtn) deleteBtn.style.display = 'none';
+    }
   });
 });
+
+// Stage, Layer, Shape 구분
+function getType(obj) {
+  return obj.parent === null ? 'Stage' : obj.attrs?.deviceType ? 'Device' : 'Layer';
+}
 
 function getLayer() {
   const layers = stage.find((node) => node.getType() === 'Layer');
@@ -166,7 +179,6 @@ function getSelectedNode() {
 }
 
 function saveData() {
-  console.log('layer===>', getLayer());
   console.log('saveData ===>', stage.toJSON());
 }
 
@@ -303,6 +315,14 @@ function deviceDelete() {
   transformer.nodes([]);
   layer.batchDraw();
 }
+
+function deviceAttrs() {
+  propertyVisible.value = true;
+}
+
+function closePropertyDialog() {
+  propertyVisible.value = false;
+}
 </script>
 <template>
   <div style="margin-top: 10px">
@@ -324,9 +344,20 @@ function deviceDelete() {
   <div id="container" style="width: 1200px; height: 700px"></div>
   <div id="menu">
     <div>
+      <button id="attrs-button" @click="deviceAttrs">속성</button>
       <button id="delete-button" @click="deviceDelete">삭제</button>
     </div>
   </div>
+  <!-- 속성 패널 -->
+  <el-drawer
+    title="속성 설정"
+    v-model="propertyVisible"
+    direction="rtl"
+    size="500px"
+    :before-close="closePropertyDialog"
+  >
+    <PropertyDialog v-if="propertyVisible" :selectedNode="selectedNode" @setPropertiesFinish="closePropertyDialog" />
+  </el-drawer>
 </template>
 <style scoped>
 #menu {

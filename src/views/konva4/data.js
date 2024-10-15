@@ -54,7 +54,7 @@ const data = {
             x: 509,
             y: 82.3125,
             width: 50,
-            height: 50,
+            height: 34.09090909090909,
             name: 'PROJECTOR_ce1bamk8shw689yzx758ub15easjig0v',
             deviceType: 'PROJECTOR',
             draggable: true,

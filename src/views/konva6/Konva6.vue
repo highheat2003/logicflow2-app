@@ -29,24 +29,16 @@ const blankDevice = {
 const selectedShapeName = ref('');
 const addDeviceType = ref('');
 const deviceTypeSvg = {
-  SMART_PLUG_ON: '/smartplug_on.svg',
-  SMART_PLUG_OFF: '/smartplug_off.svg',
-  PDU_ON: '/pdu_on.svg',
-  PDU_OFF: '/pdu_off.svg',
-  PROJECTOR_ON: '/projector_on.svg',
-  PROJECTOR_OFF: '/projector_off.svg',
-  PC_AGENT_ON: '/pc_agent_on.svg',
-  PC_AGENT_OFF: '/pc_agent_off.svg',
+  SMART_PLUG: '/smartplug_off.svg',
+  PDU: '/pdu_off.svg',
+  PROJECTOR: '/projector_off.svg',
+  PC_AGENT: '/pc_agent_off.svg',
 };
 let deviceTypeImg = {
-  SMART_PLUG_ON: null,
-  SMART_PLUG_OFF: null,
-  PDU_ON: null,
-  PDU_OFF: null,
-  PROJECTOR_ON: null,
-  PROJECTOR_OFF: null,
-  PC_AGENT_ON: null,
-  PC_AGENT_OFF: null,
+  SMART_PLUG: null,
+  PDU: null,
+  PROJECTOR: null,
+  PC_AGENT: null,
 };
 let menuNode; // context menu
 const isReadOnly = ref(false);
@@ -108,8 +100,7 @@ function initStage() {
         el2.image(image);
       } else if (el2.getClassName() === 'Image' && el2.attrs.deviceType) {
         // 디바이스 이미지
-        const isConnected = util.nvl(el2.attrs.isCconnected, false) ? '_ON' : '_OFF';
-        el2.image(deviceTypeImg[el2.attrs.deviceType + isConnected]);
+        el2.image(deviceTypeImg[el2.attrs.deviceType]);
         const newDevice = JSON.parse(JSON.stringify(blankDevice));
         newDevice.name = el2.attrs.name;
         rectangles.value.push(newDevice); // transformer적용을 위해서
@@ -179,11 +170,11 @@ function handleStageMouseDown(e) {
     });
 
     const image = new Konva.Image({
-      image: deviceTypeImg[addDeviceType.value + '_OFF'],
+      image: deviceTypeImg[addDeviceType.value],
       x: pointerPos.x,
       y: pointerPos.y,
       width: 50,
-      height: 50,
+      height: (50 * deviceTypeImg[addDeviceType.value].height) / deviceTypeImg[addDeviceType.value].width,
       name: deviceName,
       deviceType: addDeviceType.value,
     });

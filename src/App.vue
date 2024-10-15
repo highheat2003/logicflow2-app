@@ -49,7 +49,7 @@
         <el-menu-item index="4-1-3" route="/Konva6">Konva6</el-menu-item>
       </el-sub-menu>
     </el-sub-menu>
-    <el-menu-item index="5">Fabric.js demo</el-menu-item>
+    <el-menu-item index="5">Pikaso demo</el-menu-item>
   </el-menu>
   <router-view />
 </template>
