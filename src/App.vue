@@ -2,7 +2,7 @@
 
 <template>
   <el-menu ellipsis class="el-menu-popper-demo" mode="horizontal" :popper-offset="16" :router="true">
-    <el-menu-item index="1" route="/demo1">초기화면</el-menu-item>
+    <el-menu-item index="1" route="/Konva5">Home</el-menu-item>
     <el-sub-menu index="2" :popper-offset="0">
       <template #title>LogicFlow demo</template>
       <el-sub-menu index="2-0" :popper-offset="0">
@@ -49,7 +49,10 @@
         <el-menu-item index="4-1-3" route="/Konva6">Konva6</el-menu-item>
       </el-sub-menu>
     </el-sub-menu>
-    <el-menu-item index="5">Pikaso demo</el-menu-item>
+    <el-sub-menu index="5" :popper-offset="0">
+      <template #title>etc</template>
+      <el-menu-item index="5-0-1" route="/NaviGuard">Navigation Guard</el-menu-item>
+    </el-sub-menu>
   </el-menu>
   <router-view />
 </template>
