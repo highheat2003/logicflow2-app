@@ -52,6 +52,7 @@
     <el-sub-menu index="5" :popper-offset="0">
       <template #title>etc</template>
       <el-menu-item index="5-0-1" route="/NaviGuard">Navigation Guard</el-menu-item>
+      <el-menu-item index="5-0-2" route="/Survey">설문조사</el-menu-item>
     </el-sub-menu>
   </el-menu>
   <router-view />

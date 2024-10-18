@@ -13,6 +13,7 @@ import Konva4 from '@/views/konva4/Konva4.vue';
 import Konva5 from '@/views/konva5/Konva5.vue';
 import Konva6 from '@/views/konva6/Konva6.vue';
 import NaviGuard from '@/views/etc/NaviGuard.vue';
+import Survey from '@/views/survey/Survey.vue';
 
 const routes = [
   { path: '/', redirect: '/demo1' },
@@ -30,6 +31,7 @@ const routes = [
   { path: '/Konva5', component: Konva5 },
   { path: '/Konva6', component: Konva6 },
   { path: '/NaviGuard', component: NaviGuard },
+  { path: '/Survey', component: Survey },
 ];
 
 const router = createRouter({
