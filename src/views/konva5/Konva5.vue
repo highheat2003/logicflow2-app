@@ -21,20 +21,6 @@ const targetType = computed(() => {
 const scale = ref(1);
 const plan = ref('0');
 const rectangles = ref([]);
-const blankDevice = {
-  rotation: 0,
-  x: 150,
-  y: 150,
-  width: 50,
-  height: 50,
-  scaleX: 1,
-  scaleY: 1,
-  fill: 'green',
-  name: 'rect2',
-  draggable: true,
-  deviceType: '',
-};
-
 const selectedShapeName = ref('');
 const addDeviceType = ref('');
 const deviceTypeSvg = {
@@ -345,7 +331,7 @@ function addDevice(e) {
   layer.add(image);
   layer.draw();
 
-  const newDevice = JSON.parse(JSON.stringify(blankDevice));
+  const newDevice = JSON.parse(JSON.stringify(konvaHelper.getBlankDevice()));
   newDevice.name = deviceName;
   rectangles.value.push(newDevice);
 
@@ -375,7 +361,7 @@ function addText(e) {
   layer.add(text);
   layer.draw();
 
-  const newDevice = JSON.parse(JSON.stringify(blankDevice));
+  const newDevice = JSON.parse(JSON.stringify(konvaHelper.getBlankDevice()));
   newDevice.name = deviceName;
   rectangles.value.push(newDevice);
 
@@ -408,7 +394,7 @@ function addRectangle(e) {
   layer.add(rect);
   layer.draw();
 
-  const newDevice = JSON.parse(JSON.stringify(blankDevice));
+  const newDevice = JSON.parse(JSON.stringify(konvaHelper.getBlankDevice()));
   newDevice.name = deviceName;
   rectangles.value.push(newDevice);
 
@@ -437,7 +423,7 @@ function addCircle(e) {
   layer.add(circle);
   layer.draw();
 
-  const newDevice = JSON.parse(JSON.stringify(blankDevice));
+  const newDevice = JSON.parse(JSON.stringify(konvaHelper.getBlankDevice()));
   newDevice.name = deviceName;
   rectangles.value.push(newDevice);
 

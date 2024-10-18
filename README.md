@@ -34,13 +34,3 @@ https://konvajs.org/
 yarn add konva
 yarn add vue-konva
 </pre>
-
-# Pikaso
-
-https://github.com/pikasojs/pikaso
-
-설치 :
-
-<pre>
-yarn add pikaso
-</pre>
